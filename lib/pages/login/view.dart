@@ -9,7 +9,16 @@ class LoginPage extends GetView<LoginController> {
 
   // 主视图
   Widget _buildView() {
-    return const HelloWidget();
+    return Center(
+      child: Column(
+        children: [
+          const HelloWidget(),
+          ElevatedButton(onPressed: ( ){
+            controller.onTap(DateTime.now().second);
+          }, child: const Text("點我"))
+        ],
+      ),
+    );
   }
 
   @override
