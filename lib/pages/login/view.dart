@@ -13,9 +13,16 @@ class LoginPage extends GetView<LoginController> {
       child: Column(
         children: [
           const HelloWidget(),
-          ElevatedButton(onPressed: ( ){
-            controller.onTap(DateTime.now().second);
-          }, child: const Text("點我"))
+          ElevatedButton(
+              onPressed: () {
+                controller.onTap(DateTime.now().second);
+              },
+              child: const Text("點我")),
+          ElevatedButton(
+              onPressed: () {
+                Get.toNamed("/splash");
+              },
+              child: const Text("前往Splash")),
         ],
       ),
     );
