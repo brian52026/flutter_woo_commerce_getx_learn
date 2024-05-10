@@ -27,6 +27,7 @@ class SplashPage extends GetView<SplashController> {
           },
           child: const Text("現在點擊"),
         ),
+        ElevatedButton(onPressed: () {Get.toNamed(RouteNames.stylesStylesIndex);}, child: const Text("前往StylesIndex"))
       ]
     );
   }

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'common/index.dart';
 import 'global.dart';
 
+
 Future<void> main() async {
   await Global.init();
   runApp(const MyApp());
@@ -20,6 +21,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue
       ),
+
+      //多語言
+      translations: Translation(), // 詞典
+      localizationsDelegates: Translation.localizationsDelegates, // 代理
+      supportedLocales: Translation.supportedLocales, // 支援的語言種類
+      locale: ConfigService.to.locale, // 當前語言種類
+      fallbackLocale: Translation.fallbackLocale, // 預設語言種類
 
       // 起始路由
       initialRoute: RouteNames.systemSplash,
