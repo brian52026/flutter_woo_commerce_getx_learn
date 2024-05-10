@@ -10,5 +10,8 @@ class Global {
     await Future.wait([
       Get.putAsync<ConfigService>(() async => await ConfigService().init() ),
     ]).whenComplete(() {});
+
+    //工具類
+    await Storage().init();
   }
 }
