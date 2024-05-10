@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_woo_commerce_getx_learn/common/index.dart';
 import 'package:get/get.dart';
 
 import 'index.dart';
@@ -11,6 +12,7 @@ class SplashPage extends GetView<SplashController> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children:[
+        Text("SplashPage = ${ConfigService.to.version}"),
         GetBuilder<SplashController>(
           id: "splash_title",
           builder: (_) {
