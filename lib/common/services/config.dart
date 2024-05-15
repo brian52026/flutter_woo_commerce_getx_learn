@@ -5,7 +5,7 @@ import '../index.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-//配置服務
+/// 配置服務
 class ConfigService extends GetxService {
   //這是一個單例寫法
   static ConfigService get to => Get.find();
@@ -15,7 +15,7 @@ class ConfigService extends GetxService {
   PackageInfo? _platform;
   String get version => _platform?.version?? '-';
 
-  //初始化
+  /// 初始化
   Future<ConfigService> init() async{
     await getPlatform();
     return this;
@@ -25,7 +25,7 @@ class ConfigService extends GetxService {
     _platform = await PackageInfo.fromPlatform();
   }
 
-  // 初始語言
+  /// 初始語言
   void initLocale(){
     var langCode = Storage().getString(Constants.storageLanguageCode);
     if(langCode.isEmpty)return;
@@ -33,7 +33,7 @@ class ConfigService extends GetxService {
     if (index == -1) return;
     locale = Translation.supportedLocales[index];
   }
-  // 更改語言
+  /// 更改語言
   void onLocaleUpdate(Locale value){
     locale = value;
     Get.updateLocale(value);
