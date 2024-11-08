@@ -12,7 +12,7 @@ class WPHttpService extends GetxService {
   // final CancelToken _cancelToken = CancelToken();
 
   @override
-  void onInt() {
+  void onInit() {
     super.onInit();
 
     //初始 dio
